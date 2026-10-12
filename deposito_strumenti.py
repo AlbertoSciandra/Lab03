@@ -33,13 +33,8 @@ class DepositoStrumenti:
             marca = campi[2]  # C3
             anno = campi[3]  # C4
             prezzo = campi[4]  # C5
-        self.strumenti.append({
-            "codice": codice,
-            "strumento": strumento,
-            "marca": marca,
-            "anno": anno,
-            "prezzo": prezzo
-        })
+        nuovo_strumento = Strumento(codice, strumento, marca, anno, prezzo)
+        self.strumenti.append(nuovo_strumento)
         file.close()
     def aggiungi_strumento(self, strumento, marca, anno, prezzo):
         """Aggiunge uno strumento nel deposito: aggiunge solo nel sistema e non aggiorna il file"""
@@ -51,21 +46,16 @@ class DepositoStrumenti:
             num_prog = 1
 
         codice = f"S{num_prog}"
-        nuovo_strumento = {
-            "codice": codice,
-            "strumento": strumento,
-            "marca": marca,
-            "anno": int(anno),
-            "prezzo": float(prezzo)
-        }
+        nuovo_strumento = Strumento(codice, tipo, marca, int(anno), float(prezzo))
 
         self.strumenti.append(nuovo_strumento)
         return nuovo_strumento
 
+
     def strumenti_ordinati_per_marca(self):
         """Ordina gli strumenti per marca in ordine alfabetico"""
         # TODO
-        return sorted(self.strumenti, key=lambda s: s["marca"])
+        return sorted(self.strumenti,key=attrgetter('marca'))
 
     def nuovo_prestito(self, data, id_strumento, cognome_allievo):
         """Crea un nuovo prestito"""
