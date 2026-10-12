@@ -51,7 +51,6 @@ class DepositoStrumenti:
         self.strumenti.append(nuovo_strumento)
         return nuovo_strumento
 
-
     def strumenti_ordinati_per_marca(self):
         """Ordina gli strumenti per marca in ordine alfabetico"""
         # TODO

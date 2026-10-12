@@ -67,7 +67,6 @@ def main():
                 print(f"Prestito {id_prestito} terminato con successo.")
             except Exception as e:
                 print(e)
-
         elif scelta == "7":
             print("Uscita dal programma...")
             break
