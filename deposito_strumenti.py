@@ -27,7 +27,7 @@ class DepositoStrumenti:
         # TODO
         file=open("strumenti.csv", "r")
         for line in file:
-            campi = line.strip().split()
+            campi = line.strip().split(",")
             codice = campi[0]  # C1
             strumento = campi[1]  # C2
             marca = campi[2]  # C3
