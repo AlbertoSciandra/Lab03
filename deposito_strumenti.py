@@ -46,7 +46,7 @@ class DepositoStrumenti:
             num_prog = 1
 
         codice = f"S{num_prog}"
-        nuovo_strumento = Strumento(codice, tipo, marca, int(anno), float(prezzo))
+        nuovo_strumento = Strumento(codice, strumento, marca, int(anno), float(prezzo))
 
         self.strumenti.append(nuovo_strumento)
         return nuovo_strumento
